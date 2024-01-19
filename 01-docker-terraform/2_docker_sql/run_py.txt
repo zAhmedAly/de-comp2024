@@ -1,0 +1,41 @@
+# parser.add_argument('--user', required=True, help='user name for postgres')
+# parser.add_argument('--password', required=True, help='password for postgres')
+# parser.add_argument('--host', required=True, help='host for postgres')
+# parser.add_argument('--port', required=True, help='port for postgres')
+# parser.add_argument('--db', required=True, help='database name for postgres')
+# parser.add_argument('--table_name', required=True, help='name of the table where we will write the results to')
+# parser.add_argument('--url', required=True, help='url of the csv file')
+
+# LOAD GREEN TAXI DATA 
+
+export URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-09.csv.gz"
+
+python ingest_data.py \
+--user 'root' \
+--password 'root' \
+--host  'localhost' \
+--port  '5432' \
+--db  'ny_taxi' \
+--table_name  'green_taxi_trips' \
+--url  ${URL} 
+
+SELECT COUNT(*) 
+FROM GREEN_TAXI_TRIPS 
+WHERE DATE_PART('DAY',lpep_pickup_datetime) = '18'
+AND DATE_PART('DAY',lpep_dropoff_datetime ) = '18' ;
+
+# LOAD TAXI+ ZONE LOOKUP DATA 
+export URL="https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv"
+
+echo ${URL}
+
+python ingest_zone_lookup_data.py \
+--user 'root' \
+--password 'root' \
+--host  'localhost' \
+--port  '5432' \
+--db  'ny_taxi' \
+--table_name  'taxi_zone_lookup' \
+--url  ${URL} 
+
+
