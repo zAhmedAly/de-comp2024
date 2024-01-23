@@ -35,7 +35,7 @@ python ingest_zone_lookup_data.py \
 --host  'localhost' \
 --port  '5432' \
 --db  'ny_taxi' \
---table_name  'taxi_zone_lookup' \
+--table_name  'zones' \
 --url  ${URL} 
 
 
