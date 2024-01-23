@@ -6,7 +6,7 @@
 
     docker run --help
 
-`ANSWER: --rm                Automatically remove the container when it exits` 
+>   `ANSWER: --rm                Automatically remove the container when it exits` 
 
 ## Question 2. Understanding docker first run
 
@@ -22,7 +22,7 @@
 
     What is version of the package wheel ?
 
-`ANSWER: wheel      0.42.0` 
+>   `ANSWER: wheel      0.42.0` 
 
 ## Prepare Postgres
 
@@ -36,7 +36,7 @@ Tip: started and finished on 2019-09-18.
     WHERE DATE_PART('DAY', lpep_pickup_datetime) = '18'
     AND   DATE_PART('DAY', lpep_dropoff_datetime) = '18'
 
-`ANSWER: Count is 15612` 
+>   `ANSWER: Count is 15612` 
     
 
 ## Question 4. Largest trip for each day
@@ -48,7 +48,7 @@ Which was the pick up day with the largest trip distance Use the pick up time fo
     GROUP BY DATE(lpep_pickup_datetime) 
     ORDER BY 2 DESC
 
-`ANSWER: 2019-09-26	MAX DISTANCE 341.64` 
+>   `ANSWER: 2019-09-26	MAX DISTANCE 341.64` 
     
 
 ## Question 5. Three biggest pick up Boroughs
@@ -64,7 +64,7 @@ Which were the 3 pick up Boroughs that had a sum of total_amount superior to 500
     HAVING 	 SUM(gtt.total_amount)  > 50000
     ORDER BY 2 DESC
 
-`ANSWER:	"Brooklyn" "Manhattan" "Queens"` 
+>   `ANSWER:	"Brooklyn" "Manhattan" "Queens"` 
     
     "Brooklyn"	2,619,378.5399998147
     "Queens"	2,460,386.1700001983
@@ -85,7 +85,7 @@ Which were the 3 pick up Boroughs that had a sum of total_amount superior to 500
         LIMIT 1) SUBQ
         ON SUBQ.DOL = ZN."LocationID" ;
 
-`ANSWER:	JFK Airport` 
+>   `ANSWER:	JFK Airport` 
     
 
 # Terraform
@@ -157,15 +157,16 @@ Which were the 3 pick up Boroughs that had a sum of total_amount superior to 500
 
     Enter a value: yes
 
-`google_bigquery_dataset.demo-dataset: Creating...` 
+  
+>   `google_bigquery_dataset.demo-dataset: Creating...` 
 
-`google_storage_bucket.demo-bucket: Creating...` 
+>   `google_storage_bucket.demo-bucket: Creating...` 
 
-`google_bigquery_dataset.demo-dataset: Creation complete after 1s [id=projects/dtc-de-course-01152024/datasets/terra_dataset]` 
+>   `google_bigquery_dataset.demo-dataset: Creation complete after 1s [id=projects/dtc-de-course-01152024/datasets/terra_dataset]` 
 
-`google_storage_bucket.demo-bucket: Creation complete after 2s [id=dtc-de-course-01152024-terra-bucket]` 
+>   `google_storage_bucket.demo-bucket: Creation complete after 2s [id=dtc-de-course-01152024-terra-bucket]` 
 
-`Apply complete! Resources: 2 added, 0 changed, 0 destroyed.` 
+>   `Apply complete! Resources: 2 added, 0 changed, 0 destroyed.` 
     
     
     
