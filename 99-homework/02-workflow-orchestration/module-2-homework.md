@@ -32,6 +32,15 @@
 
 ## Question 6. Data Exporting
 
+    Once exported, how many partitions (folders) are present in Google Cloud?
+
+>    `ANSWER: 95`
+
+<div>
+<img src="image.png">
+</div>
+
+
 
 
 
