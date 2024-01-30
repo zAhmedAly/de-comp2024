@@ -12,7 +12,8 @@
 
 ## Question 2. Data Transformation
 
-    Upon filtering the dataset where the passenger count is equal to 0 or the trip distance is equal to zero, how many rows are left?
+    Upon filtering the dataset where the passenger count is equal to 0 or the trip distance 
+    is equal to zero, how many rows are left?
 
 >    `ANSWER: 139,370 rows`
 
